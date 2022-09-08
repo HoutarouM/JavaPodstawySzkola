@@ -13,29 +13,28 @@ public class Main {
         int randomN = (int) (Math.random() * 100 + 1);
 
         int iNumber;
-        int counter = 1;
+        int counter = 0;
 
-        boolean isComplete = false;
+        Scanner input;
 
-        System.out.println("Write number: ");
-        Scanner input = new Scanner(System.in);
-        iNumber = input.nextInt();
+        do {
+            //        Wyczytywanie
+            System.out.println("Write number: ");
+            input = new Scanner(System.in);
+            iNumber = input.nextInt();
 
-//    iteracje
-        while (iNumber != randomN) {
-            if(iNumber > randomN){
+            if (iNumber == randomN) {
+                break;
+            }
+
+            if (iNumber > randomN) {
                 System.out.println("Zaduza");
             } else {
                 System.out.println("Zamala");
             }
 
             counter++;
-
-            //        Wyczytywanie
-            System.out.println("Write number: ");
-            input = new Scanner(System.in);
-            iNumber = input.nextInt();
-        }
+        } while (iNumber != randomN);
 
         System.out.println("Congratulation you tried " + counter + " times.");
     }
