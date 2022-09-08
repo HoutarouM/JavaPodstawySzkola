@@ -30,6 +30,9 @@ public class Main {
 //        - long
 
         int iNumber;
+        int counter = 0;
+
+        boolean isComplete = false;
 
 //    iteracje
 //    zgadywanie 10 razy
@@ -40,7 +43,8 @@ public class Main {
         iNumber = input.nextInt();
 
         if (iNumber == randomN) {
-            System.out.println("Congratulations!!");
+            System.out.println("Congratulations!! " + counter + " is your score.");
+            isComplete = true;
             break;
         } else {
 //            wyrarzenie ? trawda : falsz
@@ -63,7 +67,13 @@ public class Main {
 
 //            wyrarzenie zwraca wartosc
 //            instrukcje nie
+
+            counter++;
         }
+    }
+
+    if(!isComplete){
+        System.out.println("Try binary search.");
     }
     }
 }
