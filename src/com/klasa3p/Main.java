@@ -23,11 +23,6 @@ public class Main {
 
 //    iteracje
         while (iNumber != randomN) {
-            //        Wyczytywanie
-            System.out.println("Write number: ");
-            input = new Scanner(System.in);
-            iNumber = input.nextInt();
-
             if(iNumber > randomN){
                 System.out.println("Zaduza");
             } else {
@@ -35,8 +30,13 @@ public class Main {
             }
 
             counter++;
+
+            //        Wyczytywanie
+            System.out.println("Write number: ");
+            input = new Scanner(System.in);
+            iNumber = input.nextInt();
         }
 
-        System.out.println("Congratulation");
+        System.out.println("Congratulation you tried " + counter + " times.");
     }
 }
