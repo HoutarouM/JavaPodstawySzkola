@@ -39,3 +39,7 @@ public class Main {
         System.out.println("Congratulation you tried " + counter + " times.");
     }
 }
+/**
+ * Komentarze typu java doc
+ * wszystkie komentarze dotyczace documentacji programu
+ */
