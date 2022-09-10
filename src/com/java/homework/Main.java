@@ -13,8 +13,11 @@ public class Main {
 //        System.out.println("Third exercise");
 //        thirdExercise();
 
-        System.out.println("Fourth exercise");
-        fourthExercise();
+//        System.out.println("Fourth exercise");
+//        fourthExercise();
+
+        System.out.println("Fifth exercise");
+        fifthExercise();
     }
 
     public static void firstExercise() {
@@ -101,21 +104,53 @@ public class Main {
 
         char[] arr = text.toCharArray();
 
-        for(int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             int charASCIICode = arr[i];
 
-            if(charASCIICode == 122)
-                charASCIICode = 96;
-            if(charASCIICode == 90)
-                charASCIICode = 64;
+            if (charASCIICode == 122) charASCIICode = 96;
+            if (charASCIICode == 90) charASCIICode = 64;
 
             charASCIICode += key;
 
-            arr[i] = (char)charASCIICode;
+            arr[i] = (char) charASCIICode;
         }
 
         text = String.valueOf(arr);
 
         System.out.println(text);
+    }
+
+    public static void fifthExercise() {
+        Scanner input = new Scanner(System.in);
+
+        String firstWord = input.nextLine();
+        String secondWord = input.nextLine();
+
+        if (firstWord.length() != secondWord.length()) {
+            System.out.println("Not anagrams");
+
+            return;
+        }
+
+        char[] firstStringArrChar = firstWord.toCharArray();
+        char[] secondStringArrChar = secondWord.toCharArray();
+
+        //      sum ascii codes
+//      words with the same length must and symbols must have same ascii codes sum
+        int firstStringAsciiSum = 0;
+        int secondStringAsciiSum = 0;
+
+        for (int i = 0; i < firstStringArrChar.length; i++) {
+            firstStringAsciiSum += (int) firstStringArrChar[i];
+            secondStringAsciiSum += (int) secondStringArrChar[i];
+        }
+
+        if (firstStringAsciiSum != secondStringAsciiSum) {
+            System.out.println("Not anagrams");
+
+            return;
+        }
+
+        System.out.println("Anagrams");
     }
 }
