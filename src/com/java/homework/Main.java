@@ -10,8 +10,11 @@ public class Main {
 //        System.out.println("Second exercise");
 //        secondExercise();
 
-        System.out.println("Third exercise");
-        thirdExercise();
+//        System.out.println("Third exercise");
+//        thirdExercise();
+
+        System.out.println("Fourth exercise");
+        fourthExercise();
     }
 
     public static void firstExercise() {
@@ -88,5 +91,31 @@ public class Main {
         }
 
         System.out.println(n);
+    }
+
+    public static void fourthExercise() {
+        Scanner input = new Scanner(System.in);
+        String text = input.nextLine();
+
+        int key = 3;
+
+        char[] arr = text.toCharArray();
+
+        for(int i = 0; i < arr.length; i++){
+            int charASCIICode = arr[i];
+
+            if(charASCIICode == 122)
+                charASCIICode = 96;
+            if(charASCIICode == 90)
+                charASCIICode = 64;
+
+            charASCIICode += key;
+
+            arr[i] = (char)charASCIICode;
+        }
+
+        text = String.valueOf(arr);
+
+        System.out.println(text);
     }
 }
