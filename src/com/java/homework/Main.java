@@ -4,26 +4,29 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("First exercise");
-//        firstExercise();
-//
-//        System.out.println("Second exercise");
-//        secondExercise();
+        System.out.println("First exercise");
+        firstExercise();
 
-//        System.out.println("Third exercise");
-//        thirdExercise();
+        System.out.println("Second exercise");
+        secondExercise();
 
-//        System.out.println("Fourth exercise");
-//        fourthExercise();
+        System.out.println("Third exercise");
+        thirdExercise();
 
-//        System.out.println("Fifth exercise");
-//        fifthExercise();
+        System.out.println("Fourth exercise");
+        fourthExercise();
 
-//        System.out.println("Sixth exercise");
-//        sixthExercise();
+        System.out.println("Fifth exercise");
+        fifthExercise();
+
+        System.out.println("Sixth exercise");
+        sixthExercise();
 
         System.out.println("Seventh exercise");
         seventhExercise();
+
+        System.out.println("Eighth exercise");
+        eighthExercise();
     }
 
     public static void firstExercise() {
@@ -200,5 +203,27 @@ public class Main {
         }
 
         System.out.println("First number");
+    }
+
+    public static void eighthExercise() {
+        String pass = "";
+
+        int charAsciiCode;
+
+        for (int i = 0; i < 20; i++) {
+            if (i % 2 == 0) {
+                charAsciiCode = (int) ((Math.random() * (90 - 65)) + 65);
+            } else if (i % 3 == 0) {
+                charAsciiCode = (int) ((Math.random() * (57 - 48)) + 48);
+            } else if (i % 5 == 0) {
+                charAsciiCode = (int) ((Math.random() * (64 - 58)) + 58);
+            } else {
+                charAsciiCode = (int) ((Math.random() * (122 - 97)) + 97);
+            }
+
+            pass += (char) charAsciiCode;
+        }
+
+        System.out.println("Pass: " + pass);
     }
 }
