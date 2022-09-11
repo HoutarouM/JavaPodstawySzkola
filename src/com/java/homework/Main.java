@@ -19,8 +19,11 @@ public class Main {
 //        System.out.println("Fifth exercise");
 //        fifthExercise();
 
-        System.out.println("Sixth exercise");
-        sixthExercise();
+//        System.out.println("Sixth exercise");
+//        sixthExercise();
+
+        System.out.println("Seventh exercise");
+        seventhExercise();
     }
 
     public static void firstExercise() {
@@ -182,5 +185,20 @@ public class Main {
         }
 
         System.out.println(sum);
+    }
+
+    public static void seventhExercise() {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            if (n % i == 0 && (i != 1 && i != n)) {
+                System.out.println("Not first number");
+
+                return;
+            }
+        }
+
+        System.out.println("First number");
     }
 }
