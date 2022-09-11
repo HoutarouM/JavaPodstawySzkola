@@ -16,8 +16,11 @@ public class Main {
 //        System.out.println("Fourth exercise");
 //        fourthExercise();
 
-        System.out.println("Fifth exercise");
-        fifthExercise();
+//        System.out.println("Fifth exercise");
+//        fifthExercise();
+
+        System.out.println("Sixth exercise");
+        sixthExercise();
     }
 
     public static void firstExercise() {
@@ -152,5 +155,32 @@ public class Main {
         }
 
         System.out.println("Anagrams");
+    }
+
+    public static void sixthExercise() {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+
+        int sum = 0;
+
+        int singleN;
+
+        int factorial;
+
+        while (n > 0) {
+            factorial = 1;
+
+            singleN = n % 10;
+
+            for (int j = 1; j <= singleN; j++) {
+                factorial = factorial * j;
+            }
+
+            sum += factorial;
+
+            n /= 10;
+        }
+
+        System.out.println(sum);
     }
 }
