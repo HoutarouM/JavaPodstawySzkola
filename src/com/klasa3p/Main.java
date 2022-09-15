@@ -7,52 +7,60 @@ public class Main {
 //        Losowanie 6 liczb
         System.out.println("Witaj na losowaniu 6 liczb");
 
-//        tablica wylosowanych liczb
-//        losowanie bez powtorzen
-//        kolekcje
-//        moga miec tylko typy generyczne(zlozone)
-//        po zadeklarowanie mozna usuwac i dodawac elementy
-
-//        zbiour
-//        HashSet niema indeksacji ale elementy sie nie powtarzaja
-//        zbior zazwyczaj zawiera elementy bez powtorzen
-//        zbior zazwycza nie am indeksowania elementow
-//        zbior ma metody
+//        tablica wylosowanych licz
         Set<Integer> tab = new HashSet<>();
+        List<Integer> inputtedTab = new ArrayList<>();
+        List<Integer> accurate = new LinkedList<>();
 
-//        while bo liczby moga sie powtarzac i nie dodawac sie do zbioru
-        while (tab.size() < 6) {
-            tab.add((int) (Math.random() * 10 + 1));
-        }
+        tab = getRandomNumbers(6);
 
-        System.out.println(tab);
+        System.out.println("Wylosowano: " + tab);
 
 
 //        wpisywanie 6 liczb
-//        dodajemy elementy na koncu listy
-//        na razie dowolne potem bez powturzen
+        inputtedTab = inputNumbers(10);
+
+
+//        sprawdzenie ktore wartosci wpisane zostali wylosowane
+        accurate = compareArrays(tab, inputtedTab);
+
+        System.out.println("Trafiono: " + accurate.size());
+    }
+
+    public static Set<Integer> getRandomNumbers(int n) {
+        Set<Integer> tab = new HashSet<>();
+
+//        while bo liczby moga sie powtarzac i nie dodawac sie do zbioru
+        while (tab.size() < n) {
+            tab.add((int) (Math.random() * 10 + 1));
+        }
+
+        return tab;
+    }
+
+    public static List<Integer> inputNumbers(int n) {
         Scanner input = new Scanner(System.in);
 
-//        Lista to kolekcja w ktorej mozna zmieniac rozmiar w trakcie dzialania programu
-//        elemanty indeksowane moga sie powtarzac
         List<Integer> inputtedTab = new ArrayList<>();
 
         System.out.println("Dodaj 6 liczb");
 
-        while (inputtedTab.size() < 6) {
-            int n = input.nextInt();
+        int num;
 
-            if (!inputtedTab.contains(n)) {
-                inputtedTab.add(n);
+        while (inputtedTab.size() < n) {
+            num = input.nextInt();
+
+            if (!inputtedTab.contains(num)) {
+                inputtedTab.add(num);
             } else {
                 System.out.println("Liczby nie moga sie powtarzac");
             }
         }
 
-        System.out.println(inputtedTab);
+        return inputtedTab;
+    }
 
-
-//        sprawdzenie ktore wartosci wpisane zostali wylosowane
+    public static List<Integer> compareArrays(Set<Integer> tab, List<Integer> inputtedTab) {
         List<Integer> accurate = new LinkedList<>();
 
 //        jezeli wartosc wpisana zostala wylosowana to dodajemy ja do trafiona
@@ -62,6 +70,6 @@ public class Main {
             }
         }
 
-        System.out.println(accurate);
+        return accurate;
     }
 }
