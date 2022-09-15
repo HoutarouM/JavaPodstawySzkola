@@ -27,6 +27,7 @@ public class Main {
 
         System.out.println(tab);
 
+
 //        wpisywanie 6 liczb
 //        dodajemy elementy na koncu listy
 //        na razie dowolne potem bez powturzen
@@ -38,9 +39,8 @@ public class Main {
 
         System.out.println("Dodaj 6 liczb");
 
-        int n;
         while (inputtedTab.size() < 6) {
-            n = input.nextInt();
+            int n = input.nextInt();
 
             if (!inputtedTab.contains(n)) {
                 inputtedTab.add(n);
@@ -52,6 +52,16 @@ public class Main {
         System.out.println(inputtedTab);
 
 
-//        sprawdzenie ile trafionych
+//        sprawdzenie ktore wartosci wpisane zostali wylosowane
+        List<Integer> accurate = new LinkedList<>();
+
+//        jezeli wartosc wpisana zostala wylosowana to dodajemy ja do trafiona
+        for (Integer n : inputtedTab) {
+            if (tab.contains(n)) {
+                accurate.add(n);
+            }
+        }
+
+        System.out.println(accurate);
     }
 }
