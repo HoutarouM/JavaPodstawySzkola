@@ -12,5 +12,6 @@ public class Main {
         Game game2 = new Game();
 
         game2.play(4);
+
     }
 }

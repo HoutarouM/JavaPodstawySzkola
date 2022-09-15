@@ -47,6 +47,7 @@ public class Game {
                 inputtedTab.add(num);
             else
                 System.out.println("Liczby nie moga sie powtarzac");
+
         }
     }
 
