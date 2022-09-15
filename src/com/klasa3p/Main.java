@@ -34,15 +34,22 @@ public class Main {
 
 //        Lista to kolekcja w ktorej mozna zmieniac rozmiar w trakcie dzialania programu
 //        elemanty indeksowane moga sie powtarzac
-        List<Integer> inputted = new ArrayList<>();
+        List<Integer> inputtedTab = new ArrayList<>();
 
         System.out.println("Dodaj 6 liczb");
 
-        for (int i = 0; i < 6; i++) {
-            inputted.add(input.nextInt());
+        int n;
+        while (inputtedTab.size() < 6) {
+            n = input.nextInt();
+
+            if (!inputtedTab.contains(n)) {
+                inputtedTab.add(n);
+            } else {
+                System.out.println("Liczby nie moga sie powtarzac");
+            }
         }
 
-        System.out.println(inputted);
+        System.out.println(inputtedTab);
 
 
 //        sprawdzenie ile trafionych
