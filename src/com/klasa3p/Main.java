@@ -10,15 +10,21 @@ public class Main {
 //        tablica wylosowanych licz
         Set<Integer> tab = getRandomNumbers(6);
 
+        System.out.println("Liczby: " + tab);
 
-//        wpisywanie 6 liczb
+
+//        wpisywanie liczb
         List<Integer> inputtedTab = inputNumbers(10);
 
 
 //        sprawdzenie ktore wartosci wpisane zostali wylosowane
         List<Integer> accurate = compareArrays(tab, inputtedTab);
 
-        System.out.println("Trafiono: " + accurate.size());
+//        sortowanie liczb
+//        sortowac mozna tylko indeksowane
+        Collections.sort(accurate);
+
+        System.out.println("Trafiono: " + accurate);
     }
 
     public static Set<Integer> getRandomNumbers(int n) {
@@ -26,7 +32,7 @@ public class Main {
 
 //        while bo liczby moga sie powtarzac i nie dodawac sie do zbioru
         while (tab.size() < n) {
-            tab.add((int) (Math.random() * 10 + 1));
+            tab.add((int) (Math.random() * 100 + 1));
         }
 
         return tab;
@@ -37,7 +43,7 @@ public class Main {
 
         List<Integer> inputtedTab = new ArrayList<>();
 
-        System.out.println("Dodaj 6 liczb");
+        System.out.println("Dodaj " + n + " liczb");
 
         int num;
 
