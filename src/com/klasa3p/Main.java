@@ -8,21 +8,15 @@ public class Main {
         System.out.println("Witaj na losowaniu 6 liczb");
 
 //        tablica wylosowanych licz
-        Set<Integer> tab = new HashSet<>();
-        List<Integer> inputtedTab = new ArrayList<>();
-        List<Integer> accurate = new LinkedList<>();
-
-        tab = getRandomNumbers(6);
-
-        System.out.println("Wylosowano: " + tab);
+        Set<Integer> tab = getRandomNumbers(6);
 
 
 //        wpisywanie 6 liczb
-        inputtedTab = inputNumbers(10);
+        List<Integer> inputtedTab = inputNumbers(10);
 
 
 //        sprawdzenie ktore wartosci wpisane zostali wylosowane
-        accurate = compareArrays(tab, inputtedTab);
+        List<Integer> accurate = compareArrays(tab, inputtedTab);
 
         System.out.println("Trafiono: " + accurate.size());
     }
