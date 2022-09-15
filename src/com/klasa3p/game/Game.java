@@ -13,15 +13,31 @@ public class Game {
 
     private Set<Integer> tab = new HashSet<>();
     private List<Integer> inputtedTab = new ArrayList<>();
-    List<Integer> accurate = new LinkedList<>();
+    private List<Integer> accurate = new LinkedList<>();
 
-    public void getRandomNumbers(int n) {
+    public void play(int inputN) {
+        getRandomNumbers(6);
+
+        inputNumbers(inputN);
+
+        compareArrays();
+
+        System.out.println("Random numbers: " + tab);
+        System.out.println("Inputted: " + inputtedTab);
+        System.out.println("Result: " + accurate);
+
+        tab.clear();
+        inputtedTab.clear();
+        accurate.clear();
+    }
+
+    private void getRandomNumbers(int n) {
 //        while bo liczby moga sie powtarzac i nie dodawac sie do zbioru
         while (tab.size() < n)
             tab.add((int) (Math.random() * 100 + 1));
     }
 
-    public void inputNumbers(int n) {
+    private void inputNumbers(int n) {
         Scanner input = new Scanner(System.in);
 
         System.out.println("Dodaj " + n + " liczb");
@@ -38,7 +54,7 @@ public class Game {
         }
     }
 
-    public void compareArrays() {
+    private void compareArrays() {
 //        jezeli wartosc wpisana zostala wylosowana to dodajemy ja do trafiona
         for (Integer n : inputtedTab)
             if (tab.contains(n))

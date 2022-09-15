@@ -7,10 +7,12 @@ public class Main {
 
         Game game = new Game();
 
-        game.inputNumbers(8);
-        game.getRandomNumbers(6);
-        game.compareArrays();
+        game.play(4);
 
-        System.out.println(game.accurate);
+        game.play(10);
+
+        Game game2 = new Game();
+
+        game2.play(4);
     }
 }
