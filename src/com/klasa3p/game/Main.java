@@ -9,8 +9,6 @@ public class Main {
 
         game.play(4);
 
-        game.play(10);
-
         Game game2 = new Game();
 
         game2.play(4);

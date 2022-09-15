@@ -11,7 +11,7 @@ public class Game {
 
 //    uzywanie privat to hermetyzacja
 
-    private Set<Integer> tab = new HashSet<>();
+    private static Set<Integer> tab = new HashSet<>();
     private List<Integer> inputtedTab = new ArrayList<>();
     private List<Integer> accurate = new LinkedList<>();
 
@@ -25,13 +25,9 @@ public class Game {
         System.out.println("Random numbers: " + tab);
         System.out.println("Inputted: " + inputtedTab);
         System.out.println("Result: " + accurate);
-
-        tab.clear();
-        inputtedTab.clear();
-        accurate.clear();
     }
 
-    private void getRandomNumbers(int n) {
+    private static void getRandomNumbers(int n) {
 //        while bo liczby moga sie powtarzac i nie dodawac sie do zbioru
         while (tab.size() < n)
             tab.add((int) (Math.random() * 100 + 1));
@@ -42,10 +38,10 @@ public class Game {
 
         System.out.println("Dodaj " + n + " liczb");
 
-        int num;
+        inputtedTab.clear();
 
         while (inputtedTab.size() < n) {
-            num = input.nextInt();
+            int num = input.nextInt();
 
             if (!inputtedTab.contains(num))
                 inputtedTab.add(num);
