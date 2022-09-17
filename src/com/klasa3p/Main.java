@@ -15,6 +15,8 @@ public class Main {
         int[] tab = new int[100];
 
         thirdExercise(tab);
+
+        fourthExercise(tab);
     }
 
     public static void firstExercise() {
@@ -83,5 +85,57 @@ public class Main {
         System.out.println("Ilosc liczb parzystych: " + evenNumbers.size());
 
         System.out.println("Ilosc liczb nie parzystych: " + oddNumbers.size());
+    }
+
+    public static void swap(int[] tab, int indexA, int indexB) {
+        int t = tab[indexA];
+        tab[indexA] = tab[indexB];
+        tab[indexB] = t;
+    }
+
+    public static void sort(int[] tab) {
+        for (int i = 0; i < tab.length - 1; i++)
+            for (int j = i; j < tab.length; j++)
+                if (tab[i] > tab[j])
+                    swap(tab, i, j);
+    }
+
+    public static void fourthExercise(int[] tab) {
+        sort(tab);
+
+        int mediana;
+        if (tab.length % 2 != 0) {
+            mediana = tab[(tab.length / 2) + 1];
+        } else {
+            mediana = (tab[tab.length / 2] + tab[(tab.length / 2) + 1]) / 2;
+        }
+        System.out.println("Mediana: " + mediana);
+
+        int dominanta = 0;
+        int counderMax = 0;
+        for (int i = 0; i < tab.length; i++) {
+            int counter = 0;
+
+            for (int j = 0; j < tab.length; j++) {
+                if (tab[i] == tab[j]) {
+                    counter++;
+                }
+            }
+
+            if (counter > counderMax) {
+                counderMax = counter;
+
+                dominanta = tab[i];
+            }
+        }
+
+        System.out.println("Dominanta: " + dominanta);
+
+        int srednia = 0;
+        for (int i = 0; i < tab.length; i++) {
+            srednia += tab[i];
+        }
+        srednia /= tab.length;
+        System.out.println("Srednia: " + srednia);
     }
 }
