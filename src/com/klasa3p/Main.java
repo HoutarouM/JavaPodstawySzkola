@@ -12,11 +12,13 @@ public class Main {
 //        secondExercise();
 
 
-        int[] tab = new int[100];
+//        int[] tab = new int[100];
+//
+//        thirdExercise(tab);
+//
+//        fourthExercise(tab);
 
-        thirdExercise(tab);
-
-        fourthExercise(tab);
+        fifthExercise();
     }
 
     public static void firstExercise() {
@@ -137,5 +139,35 @@ public class Main {
         }
         srednia /= tab.length;
         System.out.println("Srednia: " + srednia);
+    }
+
+    public static void sitoErastotenesa(boolean[] tab) {
+        for (int i = 2; i < tab.length; i++)
+            tab[i] = true;
+
+
+        for (int i = 2; i < tab.length; i++)
+            if (tab[i])
+                for (int j = i * i; j < tab.length; j += i)
+                    if (i != j)
+                        tab[j] = false;
+    }
+
+    public static void fifthExercise() {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Wpisz zakres x i y: ");
+        int x = input.nextInt();
+        int y = input.nextInt();
+
+        boolean[] primeNumbers = new boolean[1000];
+
+        sitoErastotenesa(primeNumbers);
+
+        System.out.print("Liczby pierwsze: ");
+
+        for (int i = x; i < y; i++)
+            if (primeNumbers[i])
+                System.out.print(i + " ");
     }
 }
