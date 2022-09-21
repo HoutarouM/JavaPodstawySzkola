@@ -1,6 +1,5 @@
 package com.klasa3p;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -8,6 +7,7 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
         firstExercise();
+        
 
         secondExercise();
 
@@ -17,6 +17,7 @@ public class Main {
         thirdExercise(tab);
 
         fourthExercise(tab);
+
 
         fifthExercise();
     }
@@ -36,22 +37,28 @@ public class Main {
     public static int binarySearch(int[] tab, int key) {
         int startIndex = 0;
         int endIndex = tab.length - 1;
-        int pivot = (startIndex + endIndex) / 2;
+        int pivot;
 
-        while (startIndex > endIndex) {
+//        find and return index
+        while (startIndex <= endIndex) {
+            pivot = (startIndex + endIndex) / 2;
+
             if (tab[pivot] == key)
-                return tab[pivot];
+                return pivot;
 
-            if (tab[pivot] < key) {
+            if (tab[pivot] > key)
                 endIndex = pivot - 1;
-            }
 
-            if (tab[pivot] > key) {
+            if (tab[pivot] < key)
                 startIndex = pivot + 1;
-            }
         }
 
-        return -1;
+//        if number mot found
+//        return index of the closest to key
+        if (tab[startIndex] - key >= key - tab[endIndex])
+            return endIndex * -1;
+        else
+            return startIndex * -1;
     }
 
     public static void secondExercise() {
@@ -69,17 +76,11 @@ public class Main {
             tab[i] = tab[i - 2] + tab[i - 1];
         }
 
+        int res_index = binarySearch(tab, n);
 
-        int res_index = Arrays.binarySearch(tab, n);
 
-
-        if (res_index < 0) {
-            res_index = res_index * (-1) - 1;
-
-            if ((double) n / tab[res_index] < 0.75) {
-                res_index--;
-            }
-        }
+        if (res_index < 0)
+            res_index = res_index * (-1);
 
 
         System.out.println("res: " + tab[res_index]);
