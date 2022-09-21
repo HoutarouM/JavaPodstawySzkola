@@ -7,16 +7,16 @@ import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-//        firstExercise();
+        firstExercise();
 
-//        secondExercise();
+        secondExercise();
 
 
-//        int[] tab = new int[100];
-//
-//        thirdExercise(tab);
-//
-//        fourthExercise(tab);
+        int[] tab = new int[100];
+
+        thirdExercise(tab);
+
+        fourthExercise(tab);
 
         fifthExercise();
     }
@@ -31,6 +31,27 @@ public class Main {
         for (int i = 0; i < tab.length; i++) {
             System.out.println(tab[i]);
         }
+    }
+
+    public static int binarySearch(int[] tab, int key) {
+        int startIndex = 0;
+        int endIndex = tab.length - 1;
+        int pivot = (startIndex + endIndex) / 2;
+
+        while (startIndex > endIndex) {
+            if (tab[pivot] == key)
+                return tab[pivot];
+
+            if (tab[pivot] < key) {
+                endIndex = pivot - 1;
+            }
+
+            if (tab[pivot] > key) {
+                startIndex = pivot + 1;
+            }
+        }
+
+        return -1;
     }
 
     public static void secondExercise() {
